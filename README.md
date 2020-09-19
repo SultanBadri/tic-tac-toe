@@ -1,4 +1,7 @@
+# Tic-Tac-Toe
 A project I did to learn javaScript from The Odin Project curriculum. 
+
+Live Demo: https://sultanbadri.github.io/tic-tac-toe/
 
 ### Features:
 1. Play against AI bot.
@@ -8,4 +11,5 @@ A project I did to learn javaScript from The Odin Project curriculum.
  * HTML
  * CSS
  * JavaScript
+ 
  
