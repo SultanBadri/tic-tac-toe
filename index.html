@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <script
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="menu">
+      <h1>Tic Tac Toe</h1>
+      <button class="start">Start Game</button>
+    </div>
+
+    <div class="name">
+      <form>
+        <label for="name">Player 1</label>
+        <input
+          type="text"
+          id="player-1"
+          placeholder="Enter Name"
+          autocomplete="off"
+          required
+        /><br />
+        <label for="name">Player 2</label>
+        <input
+          type="text"
+          id="player-2"
+          placeholder="Enter Name"
+          autocomplete="off"
+          required
+        /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <div class="game invisible">
+      <table class="board-one">
+        <tr>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+        </tr>
+        <tr>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+        </tr>
+        <tr>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+          <td class="cell"><div></div></td>
+        </tr>
+      </table>
+      <table class="board-two">
+        <tr>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+        </tr>
+        <tr>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+        </tr>
+        <tr>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+          <td class="square"><div></div></td>
+        </tr>
+      </table>
+      <button class="restart">
+        Restart<i class="fas fa-redo" id="icon"></i>
+      </button>
+      <p id="player-turn"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,374 @@
+/* Variables */
+:root {
+  --red: #fc5185;
+  --gray: #364f6b;
+  --light-white: #f0f0f0;
+  --blue: #43dde6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: inherit;
+  font-family: "Righteous", cursive;
+}
+
+body {
+  background: var(--light-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  opacity: 0;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+  color: var(--gray);
+  text-shadow: 4px 4px var(--red);
+}
+
+.start {
+  transform: scale(0);
+  width: 25%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Righteous", cursive;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, var(--red) 0%, var(--gray) 100%);
+}
+
+/* Menu animation */
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes menu {
+  from {
+    top: 40%;
+  }
+  to {
+    top: 5%;
+  }
+}
+
+/* Styling of new buttons */
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn1,
+.btn2 {
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn1 {
+  background: var(--red);
+  font-family: "Righteous", cursive;
+  letter-spacing: 2px;
+}
+
+.btn1:hover {
+  background: #fff;
+  color: var(--red);
+  transition: 0.5s ease;
+}
+
+.btn2 {
+  background: var(--gray);
+  font-family: "Righteous", cursive;
+  letter-spacing: 2px;
+}
+
+.btn2:hover {
+  background: #fff;
+  color: var(--gray);
+  transition: 0.5s ease;
+}
+
+#btn-icons {
+  margin-left: 5px;
+}
+
+/* Game board */
+.game {
+  position: absolute;
+  margin-top: 22rem;
+}
+
+.game .board-one {
+  position: fixed;
+}
+
+.game .cell div {
+  background: var(--red);
+}
+
+.game div {
+  width: 130px;
+  height: 130px;
+  background: var(--gray);
+  margin: 2px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.invisible {
+  transform: scale(0);
+}
+
+/* Restart button and icon */
+.restart {
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-top: 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  background: var(--gray);
+  color: var(--light-white);
+  font-family: "Righteous", cursive;
+  letter-spacing: 2px;
+}
+
+#icon {
+  margin-left: 5px;
+  transition: 0.3s ease;
+}
+
+#icon.clicked {
+  transition: 0.3s ease;
+  animation: rotate 0.5s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styling of x and o */
+.x,
+.o {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  font-weight: bold;
+}
+
+.square .x,
+.square .o {
+  cursor: not-allowed;
+}
+
+/* Form */
+.name {
+  z-index: 1000;
+  top: 28%;
+  transform: scale(0);
+  position: absolute;
+  transition: 0.5s ease;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  font-family: "Righteous", cursive;
+}
+
+input[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: var(--gray);
+  color: #fff;
+  width: 100%;
+  font-family: "Righteous", cursive;
+}
+
+/* Who's turn is it? */
+#player-turn {
+  float: right;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 2.2rem;
+}
+
+/* left side information */
+.left-title {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  font-size: 1.5rem;
+}
+
+.left-name {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  font-size: 3rem;
+}
+
+.left-score {
+  position: absolute;
+  top: 60%;
+  left: 12%;
+  font-size: 3.5rem;
+}
+
+/* right side information */
+.right-title {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  font-size: 1.5rem;
+}
+
+.right-name {
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  z-index: 100000;
+  font-size: 3rem;
+}
+
+.right-score {
+  position: absolute;
+  top: 60%;
+  right: 12%;
+  font-size: 3.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .game div {
+    width: 100px;
+    height: 100px;
+  }
+  .x,
+  .o {
+    font-size: 6rem;
+  }
+  .left-title {
+    top: 30%;
+    left: 5%;
+    font-size: 1rem;
+  }
+
+  .left-name {
+    top: 35%;
+    left: 10%;
+    font-size: 2rem;
+  }
+
+  .left-score {
+    left: 7%;
+    font-size: 2rem;
+  }
+
+  .right-title {
+    top: 30%;
+    right: 5%;
+    font-size: 1rem;
+  }
+
+  .right-name {
+    top: 35%;
+    right: 5%;
+    font-size: 2rem;
+  }
+
+  .right-score {
+    right: 7%;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .start {
+    width: 30%;
+  }
+  .game {
+    margin-top: 18rem;
+  }
+  .x,
+  .o {
+    font-size: 3rem;
+  }
+  #player-turn {
+    font-size: 0.7rem;
+  }
+  .restart {
+    font-size: 0.7rem;
+  }
+  .game div {
+    width: 90px;
+    height: 90px;
+  }
+  .left-title {
+    left: 5%;
+    font-size: 1rem;
+  }
+
+  .left-name {
+    left: 10%;
+    font-size: 2rem;
+  }
+
+  .left-score {
+    left: 7%;
+    font-size: 2rem;
+  }
+
+  .right-title {
+    right: 5%;
+    font-size: 1rem;
+  }
+
+  .right-name {
+    right: 5%;
+    font-size: 2rem;
+  }
+
+  .right-score {
+    right: 7%;
+    font-size: 2rem;
+  }
+}
