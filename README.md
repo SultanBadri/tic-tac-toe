@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-A project I did to learn javaScript from The Odin Project curriculum. 
+A project I did to learn JavaScript from The Odin Project curriculum. 
 
 Live Demo: https://sultanbadri.github.io/tic-tac-toe/
 
