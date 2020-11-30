@@ -1,4 +1,3 @@
-/* Variables */
 :root {
   --red: #fc5185;
   --gray: #364f6b;
@@ -52,7 +51,7 @@ h1 {
   background: linear-gradient(to right, var(--red) 0%, var(--gray) 100%);
 }
 
-/* Menu animation */
+/********************************************* START MENU ANIMATION *********************************************/
 .menu {
   display: flex;
   flex-direction: column;
@@ -67,7 +66,7 @@ h1 {
   }
 }
 
-/* Styling of new buttons */
+/********************************************* STYLING NEW BUTTONS *********************************************/
 .buttons {
   display: flex;
   justify-content: space-evenly;
@@ -115,7 +114,7 @@ h1 {
   margin-left: 5px;
 }
 
-/* Game board */
+/********************************************* GAME BOARD *********************************************/
 .game {
   position: absolute;
   margin-top: 22rem;
@@ -142,7 +141,7 @@ h1 {
   transform: scale(0);
 }
 
-/* Restart button and icon */
+/********************************************* RESTART BUTTON ICON *********************************************/
 .restart {
   border: none;
   outline: none;
@@ -177,13 +176,13 @@ h1 {
   }
 }
 
-/* Styling of x and o */
+/********************************************* STYLING X AND O *********************************************/
 .x,
 .o {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: bold;
 }
 
@@ -192,7 +191,7 @@ h1 {
   cursor: not-allowed;
 }
 
-/* Form */
+/********************************************* FORM *********************************************/
 .name {
   z-index: 1000;
   top: 28%;
@@ -221,7 +220,7 @@ input[type="submit"] {
   font-family: "Righteous", cursive;
 }
 
-/* Who's turn is it? */
+/******************************************** WHO'S TURN IS IT?  ********************************************/
 #player-turn {
   float: right;
   font-size: 0.9rem;
@@ -229,7 +228,7 @@ input[type="submit"] {
   margin-top: 2.2rem;
 }
 
-/* left side information */
+/******************************************** LEFT PLAYER INFORMATION ********************************************/
 .left-title {
   position: absolute;
   top: 25%;
@@ -251,7 +250,7 @@ input[type="submit"] {
   font-size: 3.5rem;
 }
 
-/* right side information */
+/******************************************* RIGHT SIDE INFORMATION ********************************************/
 .right-title {
   position: absolute;
   top: 25%;
@@ -274,23 +273,121 @@ input[type="submit"] {
   font-size: 3.5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .game div {
-    width: 100px;
-    height: 100px;
+@media screen and (max-width: 360px) {
+  .game-name {
+    font-size: 3rem;
   }
-  .x,
-  .o {
-    font-size: 6rem;
+
+  .btn1, .btn2 {
+    font-size: 0.6rem;
+    width: 90px;
+    height:30px;
   }
+
+  .game td div {
+    width: 70px;
+    height: 70px;
+  }
+
+  .restart {
+    padding: 5px;
+    margin: 0;
+  }
+
+  .name {
+    top: 20%;
+  }
+
+  .start {
+    font-size: 0.62rem;
+  }
+
+  #x,
+  #o {
+    font-size: 2rem;
+  }
+
+  #left-title {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 1rem;
+  }
+  
+  #left-name {
+    left: 5%;
+    top: 40%;
+    font-size: 1.5rem;
+  }
+  
+  #left-score {
+    top: 65%;
+    left: 2%;
+    font-size: 1.5rem;
+  }
+
+  #right-title {
+    top: 35%;
+    right: 5%;
+    font-size: 1rem;
+  }
+  
+  #right-name {
+    right: 5%;
+    top: 40%;
+    font-size: 1.5rem;
+  }
+  
+  #right-score {
+    position: absolute;
+    top: 65%;
+    right: 2%;
+    font-size: 1.5rem;
+  }
+
+  #player-turn {
+    margin: 0;
+  }
+  
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .start {
+    width: 30%;
+  }
+
+  .game {
+    margin-top: 18rem;
+  }
+
+  #x,
+  #o {
+    font-size: 2.5rem;
+  }
+
+  #player-turn {
+    font-size: 0.7rem;
+  }
+
+  .restart {
+    font-size: 0.7rem;
+  }
+
+  .game td div {
+    width: 80px;
+    height: 80px;
+  }
+
   .left-title {
-    top: 30%;
     left: 5%;
     font-size: 1rem;
   }
 
   .left-name {
-    top: 35%;
     left: 10%;
     font-size: 2rem;
   }
@@ -301,13 +398,11 @@ input[type="submit"] {
   }
 
   .right-title {
-    top: 30%;
     right: 5%;
     font-size: 1rem;
   }
 
   .right-name {
-    top: 35%;
     right: 5%;
     font-size: 2rem;
   }
@@ -318,36 +413,25 @@ input[type="submit"] {
   }
 }
 
-@media screen and (max-width: 450px) {
-  h1 {
-    font-size: 4rem;
+@media screen and (max-width: 768px) {
+  .game div {
+    width: 100px;
+    height: 100px;
   }
-  .start {
-    width: 30%;
-  }
-  .game {
-    margin-top: 18rem;
-  }
+
   .x,
   .o {
-    font-size: 3rem;
+    font-size: 6rem;
   }
-  #player-turn {
-    font-size: 0.7rem;
-  }
-  .restart {
-    font-size: 0.7rem;
-  }
-  .game div {
-    width: 90px;
-    height: 90px;
-  }
+
   .left-title {
+    top: 30%;
     left: 5%;
     font-size: 1rem;
   }
 
   .left-name {
+    top: 35%;
     left: 10%;
     font-size: 2rem;
   }
@@ -358,11 +442,13 @@ input[type="submit"] {
   }
 
   .right-title {
+    top: 30%;
     right: 5%;
     font-size: 1rem;
   }
 
   .right-name {
+    top: 35%;
     right: 5%;
     font-size: 2rem;
   }

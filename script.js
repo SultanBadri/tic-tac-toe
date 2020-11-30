@@ -107,10 +107,10 @@ const gameBoard = (() => {
     cells.forEach((cell) =>
       cell.addEventListener("click", () => {
         if (turnX && cell.innerHTML === `<div></div>` && !gameOver) {
-          cell.innerHTML = `<div class="x">X</div>`;
+          cell.innerHTML = `<div class="x" id="x">X</div>`;
           turnX = !turnX;
           if (!turnX && emptyCells().length > 0 && !gameOver) {
-            emptyCells()[0].innerHTML = `<div class="o">O</div>`;
+            emptyCells()[0].innerHTML = `<div class="o" id="o">O</div>`;
             turnX = !turnX;
           }
         }
@@ -166,31 +166,37 @@ const gameBoard = (() => {
     const names = document.createElement("div");
     names.classList.add("names");
 
-    //left side
+    // left side
     const title1 = document.createElement("h4");
+    title1.setAttribute("id", "left-title");
     title1.classList.add("left-title");
     title1.innerHTML = "Player One:";
 
     const player1 = document.querySelector("#player-1").value;
     const playerOneName = document.createElement("h2");
+    playerOneName.setAttribute("id", "left-name");
     playerOneName.classList.add("left-name");
     playerOneName.innerHTML = `${player1}`;
 
     let score1 = document.createElement("h3");
+    score1.setAttribute("id", "left-score");
     score1.classList.add("left-score");
     score1.innerHTML = 0;
 
-    //right side
+    // right side
     const title2 = document.createElement("h4");
+    title2.setAttribute("id", "right-title");
     title2.classList.add("right-title");
     title2.innerHTML = "Player Two:";
 
     const player2 = document.querySelector("#player-2").value;
     const playerTwoName = document.createElement("h2");
+    playerTwoName.setAttribute("id", "right-name");
     playerTwoName.classList.add("right-name");
     playerTwoName.innerHTML = `${player2}`;
 
     let score2 = document.createElement("h3");
+    score2.setAttribute("id", "right-score");
     score2.classList.add("right-score");
     score2.innerHTML = 0;
 
@@ -219,14 +225,14 @@ const gameBoard = (() => {
       squares.forEach((square) =>
         square.addEventListener("click", () => {
           if (turnX && square.innerHTML === `<div></div>` && !gameOver) {
-            square.innerHTML = `<div class="x">X</div>`;
+            square.innerHTML = `<div class="x" id="x">X</div>`;
             turnX = !turnX;
           } else if (
             !turnX &&
             square.innerHTML === `<div></div>` &&
             !gameOver
           ) {
-            square.innerHTML = `<div class="o">O</div>`;
+            square.innerHTML = `<div class="o" id="o">O</div>`;
             turnX = !turnX;
           }
           playerTurn(player1, player2);
