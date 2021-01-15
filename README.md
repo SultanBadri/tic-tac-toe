@@ -1,17 +1,18 @@
 # Tic-Tac-Toe
 
-Project from The Odin Project Curriculum.
+### [Live Demo](https://sultanbadri.github.io/tic-tac-toe/)
 
-Live Demo: https://sultanbadri.github.io/tic-tac-toe/
+![tic_tac_toe](https://user-images.githubusercontent.com/46205282/104663448-e05ea100-5681-11eb-839f-dcdb78184f6e.gif)
 
-### Features:
+#### 📝 Description
+Vanilla JS Tic Tac Toe project I made from the Odin Project Curriculum.
 
-1. Play against AI bot.
-2. Play with a second person.
-3. Mobile responsive.
+#### 💡 Features
+* Play against CPU bot
+* Play with a second person
+* Mobile responsive
 
-### Built with:
-
-- HTML
-- CSS
-- JavaScript
+#### 🛠️ Built with
+* HTML
+* CSS
+* JavaScript
