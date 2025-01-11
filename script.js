@@ -155,7 +155,11 @@ const gameBoard = (() => {
   }
 
   function isTieCell() {
-    return (cells.every((cell) => cell.innerText === "X" || cell.innerText === "O") && !checkWinXCell() && !checkWinOCell());
+    return (
+      cells.every((cell) => cell.innerText === "X" || cell.innerText === "O") &&
+      !checkWinXCell() &&
+      !checkWinOCell()
+    );
   }
   // End of AI mode code
 
@@ -280,7 +284,11 @@ const gameBoard = (() => {
   }
 
   function isTieSquare() {
-    return (cells.every((cell) => cell.innerText === "X" || cell.innerText === "O") && !checkWinXSquare() && !checkWinOSquare());
+    return (
+      cells.every((cell) => cell.innerText === "X" || cell.innerText === "O") &&
+      !checkWinXSquare() &&
+      !checkWinOSquare()
+    );
   }
   //End of two player mode code
 
